@@ -1,0 +1,43 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+package="com.tune.tunecrate"
+xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ✅ Permissions must go here, outside <application> -->
+    <!-- For Android 13+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <!-- For Android 12 and below -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    
+    <!-- For Android 11+ full access -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+
+
+    <application
+        android:label="TuneCrate"
+        tools:replace="android:label"
+        android:icon="@mipmap/ic_launcher"
+        android:requestLegacyExternalStorage="true"
+        android:usesCleartextTraffic="true"
+    android:enableOnBackInvokedCallback="true">
+        <receiver android:name="me.carda.awesome_notifications.notifications.receivers.NotificationReceiver"
+    android:exported="true"/>
+
+        <!-- Activities, if any -->
+        
+    </application>
+
+    <queries>
+  <intent>
+    <action android:name="android.intent.action.VIEW" />
+    <data android:scheme="https"/>
+  </intent>
+</queries>
+
+
+</manifest>
