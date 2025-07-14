@@ -1,5 +1,6 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ExploreService {
   static final ExploreService _instance = ExploreService._internal();
@@ -21,8 +22,8 @@ class ExploreService {
     'Old Songs': ['old+hits'],
   };
 
-  final String clientId = '55e4f67552a9487aa2cb840da64feb76';
-  final String clientSecret = '9e0c928ce6094584aeeb5111602003a5';
+  final String clientId = dotenv.env['SPOTIFY_CLIENT_ID']!;
+final String clientSecret = dotenv.env['SPOTIFY_CLIENT_SECRET']!;
   String? _accessToken;
 
   Future<void> preload() async {
