@@ -1,0 +1,63 @@
+name: tunecrate
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.1
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/appicon/TuneCrate.png"  # <- This is your launcher icon
+  adaptive_icon_background: "#1976D2"
+
+flutter_native_splash:
+  color: "#1976D2"
+  image: assets/appicon/splash.png
+  android: true
+  android_gravity: center
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/appicon/
+  fonts:
+    - family: Itim
+      fonts:
+        - asset: assets/fonts/Itim-Regular.ttf
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.20.2
+  provider: ^6.0.5
+  marquee: ^2.2.3
+  http: ^1.2.1
+  path_provider: ^2.0.11
+  restart_app: ^1.1.1
+  url_launcher: ^6.2.5
+  firebase_core: ^3.15.1
+  firebase_auth: ^5.6.2
+  flutter_media_metadata: ^1.0.0+1
+  fluttertoast: ^8.2.4
+  permission_handler: ^12.0.1
+  shared_preferences: ^2.2.3
+  device_info_plus: ^11.5.0
+  connectivity_plus: ^6.1.4
+  get: ^4.6.6
+  just_audio: ^0.10.4
+  file_selector: ^1.0.2
+
+dependency_overrides:
+  firebase_auth_platform_interface: ^7.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+  flutter_native_splash: ^2.4.0
