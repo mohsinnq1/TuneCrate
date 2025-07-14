@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:tunecrate/generated/app_localizations.dart';
 import 'package:tunecrate/globals.dart';
@@ -45,8 +46,9 @@ class _ExplorePageState extends State<ExplorePage> {
     'Old Songs': ['old+hits']
   };
 
-  final String clientId = '55e4f67552a9487aa2cb840da64feb76';
-  final String clientSecret = '9e0c928ce6094584aeeb5111602003a5';
+  final String clientId = dotenv.env['SPOTIFY_CLIENT_ID']!;
+final String clientSecret = dotenv.env['SPOTIFY_CLIENT_SECRET']!;
+
 
   @override
   void initState() {
