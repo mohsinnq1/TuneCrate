@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'detailsong.dart';
@@ -35,8 +36,8 @@ class _CategoryDetailPageState extends State<CategoryDetailPage> {
   }
 
   Future<void> _fetchToken() async {
-    const clientId = '55e4f67552a9487aa2cb840da64feb76';
-    const clientSecret = '9e0c928ce6094584aeeb5111602003a5';
+    final String clientId = dotenv.env['SPOTIFY_CLIENT_ID']!;
+final String clientSecret = dotenv.env['SPOTIFY_CLIENT_SECRET']!;
     final creds = base64Encode(utf8.encode('$clientId:$clientSecret'));
     final resp = await http.post(
       Uri.parse('https://accounts.spotify.com/api/token'),
